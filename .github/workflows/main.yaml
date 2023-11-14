@@ -23,7 +23,7 @@ jobs:
         IFS="-"
         
         # Split the string into an array
-        words=($app1)
+        words=$app1
         
         # Extract the second word (index 1 in the array)
         EXTRACTED_WORD="${words[1]}"
