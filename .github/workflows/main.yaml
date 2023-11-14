@@ -21,6 +21,6 @@ jobs:
 
     - name: Extract Word
       run: |
-        EXTRACTED_WORD=$(echo $MY_STRING | awk '{print $2}')
+        EXTRACTED_WORD=$(echo $MY_STRING | awk '{print $1}')
         echo "Extracted word is $EXTRACTED_WORD"
         
