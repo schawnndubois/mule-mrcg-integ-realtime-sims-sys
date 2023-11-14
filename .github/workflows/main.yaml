@@ -9,14 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      
-    - uses: rishabhgupta/split-by@v1
-      id: split
-      with:
-        string: 'feat/branch-name/jou/toi'
-        split-by: '/'
-    - run: | 
-        echo "${{ steps.split.outputs._2}}"
+      - name: Split version code
+        uses: xom9ikk/split@v1
+        id: split
+        with:
+          string: 2.17.3
+          separator: .
+          limit: -1
+
+      - name: Some other action
+        with:
+          major: ${{ steps.split.outputs._0 }}
+          minor: ${{ steps.split.outputs._1 }}
+          patch: ${{ steps.split.outputs._2 }}
 
