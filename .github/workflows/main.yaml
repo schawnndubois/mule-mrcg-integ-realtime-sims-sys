@@ -16,11 +16,6 @@ jobs:
         app= echo ${{ github.event.repository.name }}
         echo app1= $app1 >> $GITHUB_ENV
         echo $app1
-    - name: Set String Variable
-      run: echo "MY_STRING=Hello, GitHub Actions!" >> $GITHUB_ENV
-
-    - name: Set String Variable
-      run: echo "MY_STRING=first-second-third" >> $GITHUB_ENV
 
     - name: Extract Word
       run: |
@@ -28,7 +23,7 @@ jobs:
         IFS="-"
         
         # Split the string into an array
-        words=($MY_STRING)
+        words=($app1)
         
         # Extract the second word (index 1 in the array)
         EXTRACTED_WORD="${words[1]}"
