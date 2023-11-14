@@ -21,7 +21,7 @@ jobs:
     - name: Split String
       run: |
         # Extract the second word using jq
-        EXTRACTED_WORD=$(echo ${{ app1 }} | jq -r '.words | split("-")[1]')
+        EXTRACTED_WORD=$(echo $app1  | jq -r '.words | split("-")[1]')
         
         # Print the extracted word
         echo "Extracted word is $EXTRACTED_WORD"
