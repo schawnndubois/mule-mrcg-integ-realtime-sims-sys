@@ -19,6 +19,12 @@ jobs:
           if: github.ref == 'refs/heads/main'
           run: |
             regionP='uw'
-            applicationName="mrcg-in-${regionP}-realtime-sims-us-main"
+            applicationName="mrcg-in-${regionP}-realtime-sims-us-sys-main"
             echo $applicationName
 
+            echo "Branch from github.ref: ${GITHUB_REF}"
+            echo "Branch from github.event: ${GITHUB_EVENT_NAME}"
+  
+            echo "Extracted branch name: $branchName"
+  
+            echo "Extracted branch name from event: $branchNameFromEvent"
