@@ -18,6 +18,5 @@ jobs:
         echo $app1
     - name: test
       run: |
-        regionP=echo 'uw'
-        applicationName= "mrcg-in-${regionP}${app1#mule-mrcg-integ}"
+        applicationName= "mrcg-in-uw${app1#mule-mrcg-integ}"
         echo $applicationName
