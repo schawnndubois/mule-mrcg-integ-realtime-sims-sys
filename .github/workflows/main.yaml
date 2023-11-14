@@ -13,3 +13,9 @@ jobs:
             app1=${{ github.event.repository.name }}
             echo app1= $app1 >> $GITHUB_ENV
             echo $app1
+            
+        - name: Truncate 
+          if: github.ref == 'refs/heads/main'
+          run: |
+            echo $app1
+
