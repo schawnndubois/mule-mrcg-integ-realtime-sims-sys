@@ -24,10 +24,6 @@ jobs:
 
             branchName=${GITHUB_REF#refs/heads/}
             echo "Branch from github.ref: ${GITHUB_REF}"
-
-            branchNameFromEvent=${GITHUB_EVENT#refs/heads/}
-            echo "Branch from github.event: ${GITHUB_EVENT_NAME}"
   
             echo "Extracted branch name: $branchName"
   
-            echo "Extracted branch name from event: $branchNameFromEvent"
