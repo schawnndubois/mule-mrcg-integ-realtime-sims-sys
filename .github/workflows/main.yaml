@@ -11,18 +11,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
- 
+      
+    - uses: rishabhgupta/split-by@v1
+      id: split
+      with:
+        string: 'feat/branch-name'
+        split-by: '/'
+    - run: | 
+        echo "${{ steps.split.outputs._1}}"
 
-    - name: Extract Word
-      run: |
-        app= echo ${{ github.event.repository.name }}
-        echo app1= $app1 >> $GITHUB_ENV
-
-    - name: Split String
-      run: |
-        # Extract the second word using jq
-        EXTRACTED_WORD= echo $app1  | jq -r '.words | split("-")[1]'
-        
-        # Print the extracted word
-        echo "Extracted word is $EXTRACTED_WORD"
-        
