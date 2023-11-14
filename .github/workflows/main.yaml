@@ -19,8 +19,20 @@ jobs:
     - name: Set String Variable
       run: echo "MY_STRING=Hello, GitHub Actions!" >> $GITHUB_ENV
 
+    - name: Set String Variable
+      run: echo "MY_STRING=first-second-third" >> $GITHUB_ENV
+
     - name: Extract Word
       run: |
-        EXTRACTED_WORD=$(echo $MY_STRING | awk '{print $1}')
+        # Set IFS (Internal Field Separator) to hyphen
+        IFS="-"
+        
+        # Split the string into an array
+        words=($MY_STRING)
+        
+        # Extract the second word (index 1 in the array)
+        EXTRACTED_WORD="${words[1]}"
+        
+        # Print the extracted word
         echo "Extracted word is $EXTRACTED_WORD"
         
