@@ -16,7 +16,7 @@ jobs:
     - name: Extract Word
       run: |
         app= echo ${{ github.event.repository.name }}
-        echo app1= $app1 >> $GITHUB_ENV
+        echo app1= $app1 >> $GITHUB_OUTPUT
         
         # Set IFS (Internal Field Separator) to hyphen
         IFS="-"
