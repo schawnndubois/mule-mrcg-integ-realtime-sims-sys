@@ -13,7 +13,7 @@ jobs:
           id: truncatedString
           with:
             stringToTruncate: ${{ github.event.repository.name }}
-            maxLength: 10
+            
             removeDanglingCharacters: '-'
         - name: Echo string
           run: echo ${{ steps.truncatedString.outputs.string }}
