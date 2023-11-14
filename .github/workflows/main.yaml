@@ -11,19 +11,18 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: Install dependencies
-      run: |
-        app= echo ${{ github.event.repository.name }}
-        echo app1= $app1 >> $GITHUB_ENV
-        echo $app1
+ 
 
     - name: Extract Word
       run: |
+        app= echo ${{ github.event.repository.name }}
+        echo app1= $app1 >> $GITHUB_ENV
+        
         # Set IFS (Internal Field Separator) to hyphen
         IFS="-"
         
         # Split the string into an array
-        words=$app1
+        words=($app1)
         
         # Extract the second word (index 1 in the array)
         EXTRACTED_WORD="${words[1]}"
