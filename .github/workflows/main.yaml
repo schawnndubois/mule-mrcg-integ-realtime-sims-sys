@@ -1,25 +1,18 @@
-name: cut
+Name: Truncate String
 
-on:
-  push:
+on: 
+  push: 
     branches:
       - main
-
 jobs:
-  build:
+  truncate:
     runs-on: ubuntu-latest
     steps:
-      - name: Split version code
-        uses: xom9ikk/split@v1
-        id: split
+      - name: Truncate String
+        uses: 2428392/gh-truncate-string-action@v1.2.0
+        id: truncatedString
         with:
-          string: 2.17.3
-          separator: .
-          limit: -1
-
-      - name: Some other action
-        with:
-          major: ${{ steps.split.outputs._0 }}
-          minor: ${{ steps.split.outputs._1 }}
-          patch: ${{ steps.split.outputs._2 }}
-
+          stringToTruncate: 'abcdefghijklmnopqrstuvwxyz'
+          maxLength: 10
+      - name: Echo string
+        run: echo ${{ steps.truncatedString.outputs.string }}
