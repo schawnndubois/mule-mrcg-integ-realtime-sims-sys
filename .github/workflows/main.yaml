@@ -11,4 +11,5 @@ jobs:
         - name: Truncate String
           run: |
             app1=${{ github.event.repository.name }}
+            echo app1= $app1 >> $GITHUB_ENV
             echo $app1
