@@ -19,11 +19,14 @@ jobs:
           if: github.ref == 'refs/heads/main'
           run: |
             regionP='uw'
-            applicationName="mrcg-in-${regionP}-realtime-sims-us-sys-main"
-            echo $applicationName
 
             branchName=${GITHUB_REF#refs/heads/}
-            echo "Branch from github.ref: ${GITHUB_REF}"
+            echo "Branch from github.ref: ${GITHUB_REF}" 
+            
+            applicationName="mrcg-in-${regionP}-realtime-sims-us-sys-${branchName}"
+            echo $applicationName
+
+           
   
             echo "Extracted branch name: $branchName"
   
