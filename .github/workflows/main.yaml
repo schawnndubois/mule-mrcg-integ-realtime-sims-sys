@@ -16,7 +16,9 @@ jobs:
         app= echo ${{ github.event.repository.name }}
         echo app1= $app1 >> $GITHUB_ENV
         echo $app1
-    - name: test
+    - name: main
+      if: github.ref=='refs/heads/main'
       run: |
-        applicationName= "mrcg-in-uw-${app1#mule-mrcg-integ}"
+        regionP= 'uw'
+        applicationName= "mrcg-in-${regionP}${app1#mule-mrcg-integ}"
         echo $applicationName
