@@ -18,6 +18,8 @@ jobs:
         - name: Truncate 
           if: github.ref == 'refs/heads/main'
           run: |
-            echo "2"
-            echo $app1
+            regionP='uw'
+            applicationName="mrcg-in-${regionP}"
+            applicationName=@applicationName
+            echo $applicationName
 
