@@ -14,5 +14,6 @@ jobs:
     - name: Install dependencies
       run: |
         app= echo ${{ github.event.repository.name }}
-        echo $app
+        echo app1= $app1 >> $GITHUB_ENV
+        echo $app1
         
