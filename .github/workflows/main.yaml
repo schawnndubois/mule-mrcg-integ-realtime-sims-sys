@@ -20,6 +20,5 @@ jobs:
           run: |
             regionP='uw'
             applicationName="mrcg-in-${regionP}${app1#mule-mrcg-integ}"
-            applicationName=$applicationName
             echo $applicationName
 
