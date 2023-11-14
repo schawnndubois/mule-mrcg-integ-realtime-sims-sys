@@ -19,6 +19,6 @@ jobs:
     - name: main
       if: github.ref=='refs/heads/main'
       run: |
-        regionP= "uw"
+        echo "regionP=uw" >> $GITHUB_ENV
         applicationName= "mrcg-in-${regionP}${app1#mule-mrcg-integ}"
         echo $applicationName
