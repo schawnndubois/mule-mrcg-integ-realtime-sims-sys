@@ -16,15 +16,12 @@ jobs:
     - name: Extract Word
       run: |
         app= echo ${{ github.event.repository.name }}
-        echo app1= $app1 >> $GITHUB_OUTPUT
+        echo app1= $app1 >> $GITHUB_ENV
         
-    - name: Set String Variable
-      run: echo "MY_STRING=$app1" >> $GITHUB_ENV
-
     - name: Extract Word
       run: |
         # Extract the second word using the cut command
-        EXTRACTED_WORD=$(echo $MY_STRING | cut -d '-' -f 2)
+        EXTRACTED_WORD=$(echo $app1 | cut -d '-' -f 2)
         
         # Print the extracted word
         echo "Extracted word is $EXTRACTED_WORD"
