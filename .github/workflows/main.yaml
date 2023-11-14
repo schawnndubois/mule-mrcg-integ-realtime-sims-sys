@@ -12,7 +12,7 @@ jobs:
           uses: 2428392/gh-truncate-string-action@v1.2.0
           id: truncatedString
           with:
-            stringToTruncate: 'abcdefghi-jklmnopqrstuvwxyz'
+            stringToTruncate: ${{ github.event.repository.name }}
             maxLength: 10
             removeDanglingCharacters: '-'
         - name: Echo string
