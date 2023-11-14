@@ -1,4 +1,4 @@
-Name: Truncate String
+Name: cut
 
 on: 
   push: 
