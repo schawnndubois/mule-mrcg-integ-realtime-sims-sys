@@ -19,7 +19,7 @@ jobs:
         echo app1= $app1 >> $GITHUB_OUTPUT
         
     - name: Set String Variable
-      run: echo "MY_STRING=first-second-third" >> $GITHUB_ENV
+      run: echo "MY_STRING=$app1" >> $GITHUB_ENV
 
     - name: Extract Word
       run: |
