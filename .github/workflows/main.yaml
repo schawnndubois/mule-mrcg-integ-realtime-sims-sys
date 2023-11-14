@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+        ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true
       
     - uses: rishabhgupta/split-by@v1
       id: split
