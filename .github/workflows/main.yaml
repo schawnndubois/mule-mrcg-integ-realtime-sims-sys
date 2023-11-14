@@ -16,9 +16,11 @@ jobs:
         app= echo ${{ github.event.repository.name }}
         echo app1= $app1 >> $GITHUB_ENV
         echo $app1
-    - name: main
-      if: github.ref=='refs/heads/main'
+    - name: Set String Variable
+      run: echo "MY_STRING=Hello, GitHub Actions!" >> $GITHUB_ENV
+
+    - name: Extract Word
       run: |
-        echo "regionP=uw" >> $GITHUB_ENV
-        applicationName= "mrcg-in-${regionP}${app1#mule-mrcg-integ}"
-        echo $applicationName
+        EXTRACTED_WORD=$(echo $MY_STRING | awk '{print $2}')
+        echo "Extracted word is $EXTRACTED_WORD"
+        
