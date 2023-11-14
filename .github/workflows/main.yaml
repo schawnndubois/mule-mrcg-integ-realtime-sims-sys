@@ -15,13 +15,13 @@ jobs:
 
     - name: Extract Word
       run: |
-        app= ${{ github.event.repository.name }}
+        app= echo ${{ github.event.repository.name }}
         echo app1= $app1 >> $GITHUB_ENV
-        
-    - name: Extract Word
+
+    - name: Split String
       run: |
-        # Extract the second word using the cut command
-        EXTRACTED_WORD=$(echo $app1 | cut -d '-' -f 2)
+        # Extract the second word using jq
+        EXTRACTED_WORD=$(echo ${{ app1 }} | jq -r '.words | split("-")[1]')
         
         # Print the extracted word
         echo "Extracted word is $EXTRACTED_WORD"
