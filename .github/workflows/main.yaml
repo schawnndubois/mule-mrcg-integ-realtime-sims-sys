@@ -13,7 +13,6 @@ jobs:
       uses: actions/checkout@v3
       
     - uses: rishabhgupta/split-by@v1
-            ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true
       id: split
       with:
         string: 'feat/branch-name/jou/toi'
