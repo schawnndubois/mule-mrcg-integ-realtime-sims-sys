@@ -13,4 +13,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Get Branch Name
-      run: echo "Branch name is ${{ github.event_name }}/${{ github.ref }}"
+      run: echo "Branch name is $(basename $GITHUB_REF)"
