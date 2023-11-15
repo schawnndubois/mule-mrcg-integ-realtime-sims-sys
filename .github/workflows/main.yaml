@@ -1,26 +1,16 @@
-name: cut
+name: Get Branch Name
 
-on: 
-  push: 
+on:
+  push:
     branches:
-      - main
-jobs:
-    job1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Truncate String
-          run: |
-            app1=${{ github.event.repository.name }}
-            echo app1= $app1 >> $GITHUB_ENV
-            echo "1"
-            echo $app1
-            
-        - name: Truncate 
-          if: github.ref == 'refs/heads/main'
-          run: |
-            regionP='uw'
+      - '*'
 
-            branchName=${GITHUB_REF#refs/heads/}
-            
-            applicationName="mrcg-in-${regionP}-realtime-sims-us-sys-${branchName}"
-            echo $applicationName  
+jobs:
+  get-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get Branch Name
+      run: echo "Branch name is ${{ github.event_name }}/${{ github.ref }}"
